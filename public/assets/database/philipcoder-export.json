@@ -1,0 +1,294 @@
+{
+  "_card" : {
+    "cardid_jil7g2al" : {
+      "description" : "asd",
+      "title" : "asd"
+    },
+    "cardid_jil89mqc" : {
+      "description" : "asdasd",
+      "title" : "asdasd"
+    }
+  },
+  "_card_item_list" : {
+    "cardid_jil7g2al" : {
+      "items" : [ "item-id-jil7hqo1", "item-id-jil7g5tg" ]
+    },
+    "cardid_jil89mqc" : {
+      "items" : [ "item-id-jil89q7o", "item-id-jil89qoc", "item-id-jil89qvv", "item-id-jil89r2k" ]
+    }
+  },
+  "_class" : {
+    "classid_jil7g25p" : {
+      "description" : "asd",
+      "howmanytimestaken" : 0,
+      "image_name" : "road guitar.jpg",
+      "image_url" : "https://firebasestorage.googleapis.com/v0/b/philipcoder.appspot.com/o/class_images%2Fji3wvkqe%2Fclassid_jil7g25p%2Froad%20guitar.jpg?alt=media&token=463fb7cf-81e5-40aa-b406-550f21381219",
+      "pulished" : false,
+      "rating" : 0,
+      "title" : "asd"
+    }
+  },
+  "_class_card_list" : {
+    "classid_jil7g25p" : {
+      "cards" : [ "cardid_jil7g2al", "cardid_jil89mqc" ]
+    }
+  },
+  "_course_class_list" : {
+    "ji3wvkqe" : {
+      "classes" : {
+        "classid_jil7g25p" : {
+          "description" : "asd",
+          "howmanytimestaken" : 0,
+          "image_name" : "road guitar.jpg",
+          "image_url" : "https://firebasestorage.googleapis.com/v0/b/philipcoder.appspot.com/o/class_images%2Fji3wvkqe%2Fclassid_jil7g25p%2Froad%20guitar.jpg?alt=media&token=463fb7cf-81e5-40aa-b406-550f21381219",
+          "pulished" : false,
+          "rating" : 0,
+          "title" : "asd"
+        }
+      }
+    }
+  },
+  "_items" : {
+    "item-id-jil7g5tg" : {
+      "content" : "<H1 class=\"h1\">SQL Introduction</H1>",
+      "type" : "html"
+    },
+    "item-id-jil7hqo1" : {
+      "content" : "<P class=\"p1\">Structured Query Language</P>",
+      "type" : "html"
+    },
+    "item-id-jil89q7o" : {
+      "content" : "<H1 class=\"h1\">Heading</H1>",
+      "type" : "html"
+    },
+    "item-id-jil89qoc" : {
+      "content" : "<P class=\"p1\">Paragraph</P>",
+      "type" : "html"
+    },
+    "item-id-jil89qvv" : {
+      "content" : "<P class=\"p1\">Paragraph</P>",
+      "type" : "html"
+    },
+    "item-id-jil89r2k" : {
+      "content" : "<P class=\"p1\">Paragraph</P>",
+      "type" : "html"
+    }
+  },
+  "card" : {
+    "cid-1000" : {
+      "cost" : 0,
+      "description" : "Learn/practice sql query",
+      "difficult" : "easy",
+      "free" : true,
+      "imageurl" : "../image",
+      "title" : "SQL Query "
+    }
+  },
+  "card_item_list" : {
+    "cid-1000" : [ "iid-1000", "iid-1001" ]
+  },
+  "class" : {
+    "classid-1000" : {
+      "base_class_id" : "temp",
+      "description" : "database concepts and overview",
+      "howmanytimestaken" : 0,
+      "image_url" : "../images",
+      "language" : "english",
+      "published" : false,
+      "rating" : 0,
+      "title" : "introduction to database",
+      "video_url" : "../videos"
+    }
+  },
+  "class_card_list" : {
+    "classid-1000" : [ "cid-1000" ]
+  },
+  "course_class_list" : {
+    "courseid-1000" : [ "classid-1000" ]
+  },
+  "courses" : {
+    "ji11lvqq" : {
+      "description" : "gdgdgdg",
+      "imagename" : "960x0.jpg",
+      "imageurl" : "https://firebasestorage.googleapis.com/v0/b/philipcoder.appspot.com/o/course_images%2F4IizQBXVzdX1cQeAW0yB4249Lh43%2Fji11lvqq%2F960x0.jpg?alt=media&token=339055c8-db48-4aa1-84e4-367b6b021e2b",
+      "title" : "gdgdfgdfg"
+    },
+    "ji3wvkqe" : {
+      "description" : "vsdvsdvs",
+      "imagename" : "Untitled-1.jpg",
+      "imageurl" : "https://firebasestorage.googleapis.com/v0/b/philipcoder.appspot.com/o/course_images%2FBAAtYfHLn4OB0FjrRgVD6HWtVR32%2Fji3wvkqe%2FUntitled-1.jpg?alt=media&token=1f315b9c-51f8-4756-9a3d-fe7ffc2dd09a",
+      "title" : "dsvsdvv"
+    },
+    "ji40c7p6" : {
+      "description" : "asdasdasd",
+      "imagename" : "download.jpg",
+      "imageurl" : "https://firebasestorage.googleapis.com/v0/b/philipcoder.appspot.com/o/course_images%2FF0NEZ0A4CwRjg1BO7u2ePx8gNXC2%2Fji40c7p6%2Fdownload.jpg?alt=media&token=de898498-ebdd-46b8-8d8a-ba153673254f",
+      "title" : "yate"
+    },
+    "ji411rmn" : {
+      "description" : "asd",
+      "imagename" : "510222832.jpg",
+      "imageurl" : "https://firebasestorage.googleapis.com/v0/b/philipcoder.appspot.com/o/course_images%2FF0NEZ0A4CwRjg1BO7u2ePx8gNXC2%2Fji411rmn%2F510222832.jpg?alt=media&token=4ebab5dd-dc8c-4325-a982-9ab01921c658",
+      "title" : "asdasd"
+    },
+    "ji411ywf" : {
+      "description" : "asd",
+      "imagename" : "661%2Ffrancetv-actu-articles%2F205%2F29d%2F3cb8a05b15898bd91c947f869f%2Ffestival-de-cannes-quelle-ambiance-sur-la-croisette_14976881.jpg",
+      "imageurl" : "https://firebasestorage.googleapis.com/v0/b/philipcoder.appspot.com/o/course_images%2FF0NEZ0A4CwRjg1BO7u2ePx8gNXC2%2Fji411ywf%2F661%252Ffrancetv-actu-articles%252F205%252F29d%252F3cb8a05b15898bd91c947f869f%252Ffestival-de-cannes-quelle-ambiance-sur-la-croisette_14976881.jpg?alt=media&token=79a5efd6-0173-4bf4-abe6-d6688adc2491",
+      "title" : "asd"
+    },
+    "ji5i2inv" : {
+      "description" : "asd",
+      "imagename" : "30185050_2093591927526613_464346908_n.jpg",
+      "imageurl" : "https://firebasestorage.googleapis.com/v0/b/philipcoder.appspot.com/o/course_images%2FoaU90Mv1JpOL8U3hIT7LMRs5HWm2%2Fji5i2inv%2F30185050_2093591927526613_464346908_n.jpg?alt=media&token=5f8997a9-96b4-4d9f-b128-1c3be18124dc",
+      "title" : "asd"
+    },
+    "ji5usega" : {
+      "description" : "bsdbsdhnss",
+      "imagename" : "download.jpg",
+      "imageurl" : "https://firebasestorage.googleapis.com/v0/b/philipcoder.appspot.com/o/course_images%2FF0NEZ0A4CwRjg1BO7u2ePx8gNXC2%2Fji5usega%2Fdownload.jpg?alt=media&token=f868a78e-1af6-42c6-8ca4-0d648cbbea1c",
+      "title" : "Cvdhsdn"
+    },
+    "ji6vbw8y" : {
+      "description" : "Kaya mo yan kyaaaaaaaaaah",
+      "imagename" : "34459618_1822769684510708_6179645502930288640_n.jpg",
+      "imageurl" : "https://firebasestorage.googleapis.com/v0/b/philipcoder.appspot.com/o/course_images%2FpVoPKwCMQMdSQusc4c4QX8zb1ZD2%2Fji6vbw8y%2F34459618_1822769684510708_6179645502930288640_n.jpg?alt=media&token=04277e69-2419-45d6-aa2e-e521b3f038a4",
+      "title" : "BSIT"
+    },
+    "ji6vlv13" : {
+      "description" : "hahaha",
+      "imagename" : "661%2Ffrancetv-actu-articles%2F205%2F29d%2F3cb8a05b15898bd91c947f869f%2Ffestival-de-cannes-quelle-ambiance-sur-la-croisette_14976881.jpg",
+      "imageurl" : "https://firebasestorage.googleapis.com/v0/b/philipcoder.appspot.com/o/course_images%2FoaU90Mv1JpOL8U3hIT7LMRs5HWm2%2Fji6vlv13%2F661%252Ffrancetv-actu-articles%252F205%252F29d%252F3cb8a05b15898bd91c947f869f%252Ffestival-de-cannes-quelle-ambiance-sur-la-croisette_14976881.jpg?alt=media&token=609f1373-2ee9-44f1-b792-ba54dafa2e1a",
+      "title" : "hala ka"
+    }
+  },
+  "item" : {
+    "iid-1000" : {
+      "answerlist" : [ "asd", "qwerty", "zxcv" ],
+      "content" : "<h1 id=\"item-id-jiavectk\" class=\"h1\">click to edit..</h1>",
+      "difficulty" : "easy",
+      "height" : 0,
+      "imageurl" : "../image",
+      "size" : 0,
+      "type" : "html",
+      "videourl" : "../video",
+      "width" : 0
+    }
+  },
+  "messages" : {
+    "-LED1RvC808g-Hq1IbB2" : {
+      "original" : "uppercasemetoo",
+      "uppercase" : "UPPERCASEMETOO"
+    }
+  },
+  "user" : {
+    "14001376300" : {
+      "email" : "peraneduard@gmail.com",
+      "firstname" : "Eduard",
+      "language" : "tagalog",
+      "last_date_login" : "5/26/2018",
+      "lastname" : "Peran",
+      "photourl" : "../image",
+      "points_earned" : 0,
+      "rank" : 0,
+      "username" : "edperan"
+    }
+  },
+  "user_card_list" : {
+    "14001376300" : {
+      "cid-1000" : {
+        "last_date_accessed" : "5/26/2018",
+        "progress" : "0%",
+        "startdate" : "5/26/2018"
+      }
+    }
+  },
+  "user_class" : {
+    "14001376300" : {
+      "classid-1000" : {
+        "class_grade_based_on_test" : "0%",
+        "enddate" : "5/26/2018",
+        "last_date_accesed" : "5/26/2018",
+        "progress" : "0%",
+        "rating" : 0,
+        "startdate" : "5/26/2018"
+      }
+    }
+  },
+  "user_course" : {
+    "4IizQBXVzdX1cQeAW0yB4249Lh43" : {
+      "courses" : {
+        "ji11lvqq" : {
+          "description" : "gdgdgdg",
+          "imagename" : "960x0.jpg",
+          "imageurl" : "https://firebasestorage.googleapis.com/v0/b/philipcoder.appspot.com/o/course_images%2F4IizQBXVzdX1cQeAW0yB4249Lh43%2Fji11lvqq%2F960x0.jpg?alt=media&token=339055c8-db48-4aa1-84e4-367b6b021e2b",
+          "title" : "gdgdfgdfg"
+        }
+      }
+    },
+    "BAAtYfHLn4OB0FjrRgVD6HWtVR32" : {
+      "courses" : {
+        "ji3wvkqe" : {
+          "description" : "vsdvsdvs",
+          "imagename" : "Untitled-1.jpg",
+          "imageurl" : "https://firebasestorage.googleapis.com/v0/b/philipcoder.appspot.com/o/course_images%2FBAAtYfHLn4OB0FjrRgVD6HWtVR32%2Fji3wvkqe%2FUntitled-1.jpg?alt=media&token=1f315b9c-51f8-4756-9a3d-fe7ffc2dd09a",
+          "title" : "dsvsdvv"
+        }
+      }
+    },
+    "F0NEZ0A4CwRjg1BO7u2ePx8gNXC2" : {
+      "courses" : {
+        "ji40c7p6" : {
+          "description" : "asdasdasd",
+          "imagename" : "download.jpg",
+          "imageurl" : "https://firebasestorage.googleapis.com/v0/b/philipcoder.appspot.com/o/course_images%2FF0NEZ0A4CwRjg1BO7u2ePx8gNXC2%2Fji40c7p6%2Fdownload.jpg?alt=media&token=de898498-ebdd-46b8-8d8a-ba153673254f",
+          "title" : "yate"
+        },
+        "ji411rmn" : {
+          "description" : "asd",
+          "imagename" : "510222832.jpg",
+          "imageurl" : "https://firebasestorage.googleapis.com/v0/b/philipcoder.appspot.com/o/course_images%2FF0NEZ0A4CwRjg1BO7u2ePx8gNXC2%2Fji411rmn%2F510222832.jpg?alt=media&token=4ebab5dd-dc8c-4325-a982-9ab01921c658",
+          "title" : "asdasd"
+        },
+        "ji411ywf" : {
+          "description" : "asd",
+          "imagename" : "661%2Ffrancetv-actu-articles%2F205%2F29d%2F3cb8a05b15898bd91c947f869f%2Ffestival-de-cannes-quelle-ambiance-sur-la-croisette_14976881.jpg",
+          "imageurl" : "https://firebasestorage.googleapis.com/v0/b/philipcoder.appspot.com/o/course_images%2FF0NEZ0A4CwRjg1BO7u2ePx8gNXC2%2Fji411ywf%2F661%252Ffrancetv-actu-articles%252F205%252F29d%252F3cb8a05b15898bd91c947f869f%252Ffestival-de-cannes-quelle-ambiance-sur-la-croisette_14976881.jpg?alt=media&token=79a5efd6-0173-4bf4-abe6-d6688adc2491",
+          "title" : "asd"
+        },
+        "ji5usega" : {
+          "description" : "bsdbsdhnss",
+          "imagename" : "download.jpg",
+          "imageurl" : "https://firebasestorage.googleapis.com/v0/b/philipcoder.appspot.com/o/course_images%2FF0NEZ0A4CwRjg1BO7u2ePx8gNXC2%2Fji5usega%2Fdownload.jpg?alt=media&token=f868a78e-1af6-42c6-8ca4-0d648cbbea1c",
+          "title" : "Cvdhsdn"
+        }
+      }
+    },
+    "oaU90Mv1JpOL8U3hIT7LMRs5HWm2" : {
+      "courses" : {
+        "ji5i2inv" : {
+          "description" : "asd",
+          "imagename" : "30185050_2093591927526613_464346908_n.jpg",
+          "imageurl" : "https://firebasestorage.googleapis.com/v0/b/philipcoder.appspot.com/o/course_images%2FoaU90Mv1JpOL8U3hIT7LMRs5HWm2%2Fji5i2inv%2F30185050_2093591927526613_464346908_n.jpg?alt=media&token=5f8997a9-96b4-4d9f-b128-1c3be18124dc",
+          "title" : "asd"
+        },
+        "ji6vlv13" : {
+          "description" : "hahaha",
+          "imagename" : "661%2Ffrancetv-actu-articles%2F205%2F29d%2F3cb8a05b15898bd91c947f869f%2Ffestival-de-cannes-quelle-ambiance-sur-la-croisette_14976881.jpg",
+          "imageurl" : "https://firebasestorage.googleapis.com/v0/b/philipcoder.appspot.com/o/course_images%2FoaU90Mv1JpOL8U3hIT7LMRs5HWm2%2Fji6vlv13%2F661%252Ffrancetv-actu-articles%252F205%252F29d%252F3cb8a05b15898bd91c947f869f%252Ffestival-de-cannes-quelle-ambiance-sur-la-croisette_14976881.jpg?alt=media&token=609f1373-2ee9-44f1-b792-ba54dafa2e1a",
+          "title" : "hala ka"
+        }
+      }
+    },
+    "pVoPKwCMQMdSQusc4c4QX8zb1ZD2" : {
+      "courses" : {
+        "ji6vbw8y" : {
+          "description" : "Kaya mo yan kyaaaaaaaaaah",
+          "imagename" : "34459618_1822769684510708_6179645502930288640_n.jpg",
+          "imageurl" : "https://firebasestorage.googleapis.com/v0/b/philipcoder.appspot.com/o/course_images%2FpVoPKwCMQMdSQusc4c4QX8zb1ZD2%2Fji6vbw8y%2F34459618_1822769684510708_6179645502930288640_n.jpg?alt=media&token=04277e69-2419-45d6-aa2e-e521b3f038a4",
+          "title" : "BSIT"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,157 @@
+.carditem-container{
+    position: relative; 
+    width: 100%;
+    padding: 0px; 
+    margin: 2px;
+    background-color: white;
+    cursor: text;
+    border: 1px solid silver;
+}
+/*.carditem-container:hover{
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+}*/
+
+.carditem-panel{
+    width: 100%;
+    box-sizing: border-box;
+    background-color: white;
+    padding: 10px;
+    display: none;
+}
+.carditem-panel h5, p{
+  margin: 0px;
+}
+.carditem-panel h5{
+  color: skyblue;
+  text-decoration: underline;
+}
+
+/* item close button css*/
+.carditem-close-but{
+    position: absolute;
+    top: 0px;
+    left: -22px;
+    color: gray;
+    cursor: pointer; 
+    line-height: 70%;
+    text-align: center;
+    padding: 2px;
+    background-color: white;
+}
+.carditem-close-but i{
+  font-size: 15px;  
+}
+.carditem-close-but:hover{
+    color: gainsboro;
+    background-color: #f04e4e;
+}
+/* drag button */
+.carditem-drag-but{
+  position: absolute;
+  top: 20px;
+  left: -22px;
+  color: gray;
+  cursor: move; 
+  line-height: 70%;
+  text-align: center;
+  padding: 2px;
+  background-color: white;
+}
+.carditem-drag-but i{
+  font-size: 15px;  
+}
+/* drag button */
+
+/* video item css style */
+.videoitem{
+    position: relative;
+    display: flex;
+    flex-flow: row wrap;
+}
+.vid-col-1{
+    flex: 40%;
+    max-width: 40%;
+    padding: 10px;
+}
+.vid-col-2{
+    flex: 60%;
+    max-width: 60%;
+    padding: 10px;
+}
+@media screen and (max-width: 600px) {
+    .vid-col-1{
+      flex: 100%;
+      max-width: 100%;
+    }
+    .vid-col-2{
+      flex: 100%;
+      max-width: 100%;
+    }
+  }
+/* video item css style */
+
+/* Reading list css style */
+.readinglist{
+    position: relative;
+    width: 100%; 
+    cursor: text; 
+    display: flex; 
+    flex-flow: row wrap-reverse;
+}
+.contentbar{
+    position: relative;
+    background-color: white; 
+    flex: 80%; 
+    margin: 0px; 
+    padding-bottom: 15px; 
+    overflow: auto;
+    height: auto;
+    border-right: 1px solid silver; 
+}
+.items-container > ul{
+    position: relative; 
+    padding-left: 0px;
+    list-style-type: none;
+    padding: 1px;
+    display: flex;
+    flex-flow: column nowrap;
+}
+.items-container > ul > li{
+    position: relative;
+    background-color: white;
+    border: 1px solid white;
+    background-position: left center;
+    background-repeat:no-repeat;
+    background-size: 15px;
+    cursor: text;
+    padding: 5px 2px 5px 20px;
+    margin: 1px;
+}
+.items-container > ul > li:hover{
+    border: 1px solid silver;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+}
+.sidebar{
+    position: relative;
+    background-color: white; 
+    flex: 20%; 
+    margin: 0px;
+    height: auto;
+}
+.sidebar > ul{
+    padding: 0px;
+    background-color: white;
+}
+.sidebar > ul > li {
+    padding: 10px;
+    list-style-type: none;
+}
+.sidebar > ul > li:hover{
+    background-color: rgb(235, 232, 232);
+}
+.dropleft{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+/* Reading list css style */

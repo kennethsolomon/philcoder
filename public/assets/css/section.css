@@ -1,0 +1,62 @@
+/*.class-section{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    height: auto;
+    margin-bottom: 15px;
+    background-color:white;
+}
+.section-controls > button{
+    padding: 6px;
+}
+.create-card-cont{
+    padding: 0px;
+    position: relative;
+}*/
+.class-section{
+    position: relative;
+    margin-bottom: 0px;
+}
+.section-header{
+    background-color: white;
+}
+.section-body{
+    position: relative;
+}
+.section-body .card-body{
+    padding: 0px;
+}
+.section-controls{
+    float: right;
+}
+.cmain .addcard, .cmain .listview, .cmain .sortcard, .section-controls .closesection{
+    padding: 2px;
+    transition: transform .2s;
+}
+.cmain .addcard:hover, .cmain .listview:hover, .cmain .sortcard:hover, .section-controls .closesection:hover, .editlabel:hover{
+    -ms-transform: scale(1.2); /* IE 9 */
+    -webkit-transform: scale(1.2); /* Safari 3-8 */
+    transform: scale(1.2); 
+}
+.section-controls > button i, .cmain > button >i{
+    font-size: 20px;
+    color: silver;
+}
+.section-controls > button i:hover, .cmain > button >i:hover, .editlabel:hover{
+    color: black;
+}
+.editlabel{
+    transition: transform .2s;
+    font-size: 15px; 
+    cursor:pointer; 
+    padding: 0px;
+    margin: 0px;
+    color: silver;
+}
+.create-card-cont{
+    padding: 0px;
+    position: relative;
+    background-color: white;
+    display: flex;
+    flex-flow: column nowrap;
+}

@@ -1,0 +1,134 @@
+  /* item div */
+  .item-container, .item{
+    position: relative; 
+    margin: 0px;
+  }
+  /* item div */
+
+  /* item close button css*/
+  .item-close-but{
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      display: none;
+      color: gray;
+      cursor: pointer; 
+      line-height: 70%;
+      text-align: center;
+      padding: 2px;
+      background-color: white;
+      z-index: 1000;
+  }
+  .item-close-but i{
+    font-size: 10px;  
+  }
+  .item-close-but:hover{
+      color: gainsboro;
+      background-color: #f04e4e;
+  }
+  /* item close button css*/
+
+  /* medium Editor Toolbar */
+  blockquote {
+    display: block;
+    border-left: 6px solid #df0d32;
+    padding-left: 15px;
+    font-style: italic;
+    color: #555;
+    margin: 0px;
+  }
+  blockquote::before{
+    content: none;
+  }
+  blockquote::after{
+    content: none;
+  }
+  .editable{
+    position: relative;
+    cursor: text;
+    outline: none;
+    margin: 0 0 0px 0;
+    padding: 0 0 0px 0;
+  }
+  .editable:focus {
+    outline: none;
+    border: 2px dotted #555;
+  }
+
+/* Quiz Item css*/
+  /* Question row css*/
+    .question_answer{
+      position: relative;
+      width: 100%;
+    }
+    .question-menu-row{
+      display: flex;
+      flex-flow: row wrap;
+      width: 100%;
+    }
+    .question-col{
+      position: relative;
+      flex: 70%;
+      padding: 8px;
+    }
+    .menu-col{
+      flex: 30%;
+      padding: 8px;
+    }
+  /* Question row css*/
+
+  /* Answer Options row css*/
+    .answer-row{
+      max-width: 100%;
+      padding: 8px;
+    }
+    .answer-option-flex-cont{
+      position: relative;
+      display: flex;
+      flex-flow: row wrap;
+    }
+    .answer-option-col{
+      position: relative;
+      width: 300px;
+      margin-right: 5px;
+    }
+    .msg-col{
+      width: 200px;
+    }
+    
+    .option-row{
+      max-width: 100%;
+      padding: 8px;
+    }
+    .answer-option-close{
+      display: block;
+      border-radius: 50%;
+      position: absolute; 
+      top: 0px; 
+      right: 5px;
+      color: silver;
+      cursor: pointer; 
+      line-height: 70%;
+      text-align: center;
+      padding: 2px;
+      z-index: 1000;
+    }
+    .answer-option-close i{
+      font-size: 20px;  
+    }
+    .answer-option-close:hover{
+        color: white;
+        background-color: silver;
+    }
+
+    .add-answer-row, .add-option-row{
+      position: relative;
+      max-width: 100%;
+      padding: 8px;
+    }
+    .addanswer, .addoption{
+      
+    }
+
+  /* Answer Options row css*/
+/* Quiz Item css*/

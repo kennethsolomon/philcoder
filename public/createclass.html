@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+    <title>PhilipCoder | Create new course</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/5.3.1/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/5.3.1/firebase-auth.js"></script>
+    <script defer src="/__/firebase/5.3.1/firebase-database.js"></script>
+    <script defer src="/__/firebase/5.3.1/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/5.3.1/firebase-storage.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
+
+    <!-- Font Awesome for awesome icons. You can redefine icons used in a plugin configuration -->
+    <link href="https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css" rel="stylesheet">
+
+    <!-- include the medium-editor and plugins -->
+    <link rel="stylesheet" href="assets/medium-editor/css/medium-editor.css">
+    <link rel="stylesheet" href="assets/medium-editor/css/themes/beagle.css">
+    <link rel="stylesheet" href="assets/medium-editor/css/plugins/medium-editor-tables.css">
+    <link rel="stylesheet" href="assets/medium-editor/css/plugins/medium-editor-insert-plugin.min.css">
+
+    <!-- Bootstrap css -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+    <!-- Material Design lite css -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+
+    <!-- my custom design -->
+    <link rel="stylesheet" href="assets/css/custom.css"/>
+    <link rel="stylesheet" href="assets/css/createclass_custom.css"/>
+    <link rel="stylesheet" href="assets/css/section.css"/>
+    <link rel="stylesheet" href="assets/css/card.css"/>
+    <link rel="stylesheet" href="assets/css/carditem.css"/>
+    <link rel="stylesheet" href="assets/css/item.css"/>
+
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #4257b2;">
+        <a class="navbar-brand" href="#" style="font-size: 26px; margin-left: 15px;"><b>PhilipCoder</b></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <!--<li></li>
+            <li class="nav-item active">
+              <a class="nav-link" href="https://philipcoder.firebaseapp.com/home.html">Home <span class="sr-only">(current)</span></a>
+            </li>-->
+            <li class="nav-item">
+              <a class="nav-link" href="/course.html">Browse Courses</a>
+            </li>
+            <!--<li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#">Disabled</a>
+              </li>-->
+          </ul>
+          <!-- Expandable Textfield -->
+              <form action="#" style="margin-right: 20px;">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+                  <label class="mdl-button mdl-js-button mdl-button--icon" for="sample6">
+                    <i class="material-icons" style="color: white;">search</i>
+                  </label>
+                  <div class="mdl-textfield__expandable-holder">
+                    <input class="mdl-textfield__input" type="text" id="sample6">
+                    <label class="mdl-textfield__label" for="sample-expandable">Expandable Input</label>
+                  </div>
+                </div>
+              </form>
+
+          <!--<a href="#" class="nav-link">Log in</a>-->
+          <form class="form-inline my-2 my-lg-0">
+            <!--<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" type="button" style="background-color: gold;" data-toggle="modal" data-target="#regmodal">
+                Sign up
+              </button>-->
+              <button type="button" class="btn btn-warning" style="padding: 15px; margin-right: 25px;">Complete purchase</button>
+          </form>
+
+          <!-- Large button groups (default and split) -->
+          <div class="btn-group">
+              <a href="#" id="usermenu-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <!--<img src="https://s6.postimg.cc/4p3bwfyzl/babako.jpg" style="width:40px; height: 40px; border-radius: 50%; margin-right: 8px;"/>
+                  Jessica Ernacio
+                  <i class="material-icons">arrow_drop_down</i>-->
+              </a>
+              <div class="dropdown-menu dropdown-menu-right" style="border-radius: 0px;">
+                  <a class="dropdown-item" href="/mycourse.html">My Courses</a>
+                  <a id="btnsignout" class="dropdown-item" href="#">Log out</a>
+              </div>
+          </div>
+
+        </div>
+    </nav>
+
+  <div class="panel">
+  </div>
+
+  <div class="container-fluid">
+    <div class="row courseinfo-cont" style="padding-top: 20px">
+        <!-- -->
+    </div>
+    <div id="content1" class="row" style="padding-top: 10px;">
+        <div class="col-md-12">
+          <div class="create-class-row">
+            <div class="col-classform">
+              <h3 class="action_title" style="color: gray;">Create a new class</h3>
+              <form class="class-form" action="#">
+                <table class="createclasstable">
+                  <tr>
+                    <td>
+                      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="width: 100%;">
+                        <input class="mdl-textfield__input" type="text" id="txtclasstitle">
+                        <label class="mdl-textfield__label" for="sample3" style="margin-bottom: 0px;">Class Title...</label>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="mdl-textfield mdl-js-textfield" style="width: 100%;">
+                        <textarea class="mdl-textfield__input" type="text" rows= "2" id="txtclassdes" data-autoresize></textarea>
+                        <label class="mdl-textfield__label" for="sample5" style="margin-bottom: 0px;">Class Description...</label>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p>Upload an image for this class.</p>
+                      <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="class-input-img">
+                        <label class="custom-file-label" for="customFile">Choose file</label>
+                      </div>
+                      <div class="prev-cont" style="display: none; margin-top: 8px;">
+                        <img id="class-img-prev-elid" src="#" alt="..." class="img-thumbnail" width="320px" height="240px" style="border-radius: 0px;">
+                      </div>
+                      <div class="progress" style="height: 2px;">
+                        <div id="p1" class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                    </td>
+                  <tr>
+                  <tr>
+                    <td>
+                      <button type="button" class="btn btn-primary btnsubmitclass" style="padding:10px 20px 10px 20px;">Submit</button>
+                    </td>
+                  </tr>
+                  <tr>
+                  </tr>
+                </table>
+              </form>
+            </div>
+            <div class="col-sections-items">
+              <div class="create-section-cont accordion" id="accordionExample">         
+              </div>
+              <button type="button" class="btn-add-section" style="outline: none;">
+                <i class="material-icons">add</i> Add Section
+              </button>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="row" style="padding-top: 20px">
+        <!-- -->
+    </div>
+  </div>
+
+  <!--<div id="floating-menu" class="btn-group-vertical" role="group" aria-label="Basic example">  
+      <button type="button" class="btn btn-light sortsec" data-toggle="tooltip" data-placement="left" data-trigger="hover" title="Sort sections">
+        <i class="material-icons">sort</i>
+      </button>
+  </div>-->
+
+  <!-- Colored FAB button with ripple -->
+  <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored sortsec" style="outline: none;">
+    <i class="material-icons">sort</i>
+  </button>
+
+  <div id="demo-snackbar-example" class="mdl-js-snackbar mdl-snackbar">
+    <div class="mdl-snackbar__text"></div>
+    <button class="mdl-snackbar__action" type="button" style="outline: none;"></button>
+  </div>
+
+    <!-- inluded jquery plugin -->
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="assets/javascript/jquery.ui.touch-punch.min.js"></script>
+
+    <!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+    <!-- Include Material js -->
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script> 
+    
+    <!-- included javascript -->
+    <script defer src="assets/javascript/user_manager.js"></script>
+    <script defer src="assets/javascript/class_manager.js"></script>
+    <script defer src="assets/javascript/section_manager.js"></script>
+    <script defer src="assets/javascript/card_manager.js"></script>
+
+    <script defer src="assets/javascript/videoitem_manager.js"></script>
+    <script defer src="assets/javascript/readingitem_manager.js"></script>
+    <script defer src="assets/javascript/quizitem_manager.js"></script>
+    <script defer src="assets/javascript/answer.js"></script>
+    <script defer src="assets/javascript/option.js"></script>
+    <script defer src="assets/javascript/item_manager.js"></script>
+
+    <!-- handlebars -->
+    <script src="assets/handlebars/handlebars.runtime.min.js"></script>
+
+    <!-- jQuery File Upload Plugin has a few more dependencies itself -->
+    <script src="assets/blueimp-file-upload/js/vendor/jquery.ui.widget.js"></script>
+    <script src="assets/blueimp-file-upload/js/jquery.iframe-transport.js"></script>
+    <script src="assets/blueimp-file-upload/js/jquery.fileupload.js"></script>
+
+    <!--include the medium-editor and plugins-->
+    <script src="assets/medium-editor/js/medium-editor.js"></script>
+    <script src="assets/medium-editor/js/plugins/medium-editor-tables.js"></script>
+    <script src="assets/medium-editor/js/plugins/medium-editor-insert-plugin.min.js"></script>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+        $("[data-toggle='tooltip']").on('shown.bs.tooltip', function(){
+          
+        });
+      })
+
+      try {
+        let app = firebase.app();
+        let features = ['auth', 'database', 'messaging', 'storage'].filter(feature => typeof app[feature] === 'function');
+
+        var provider = new firebase.auth.GoogleAuthProvider();
+        var theUser = null;
+        let courseid = null;
+        let classid = null;
+
+        // Note this call is async too! It will be called with the correct user later.
+        firebase.auth().onAuthStateChanged(user => {
+          if (user) {
+            // the firebase user object is documented here:
+            // https://firebase.google.com/docs/reference/js/firebase.User
+            theUser = user; // you will see theUser below
+
+            //console.log(user);
+
+            courseid = getUrlParameter("courseid");//get the courseid
+            classid = getUrlParameter("classid");//get the class id 
+
+            //console.log(classid);
+
+            // Wait for the user to log in before we show the course table
+            new ClassManager(theUser, courseid, classid);
+            new UserManager(theUser);
+
+            // User is signed in.
+            var displayName = user.displayName;
+            var email = user.email;
+            var emailVerified = user.emailVerified;
+            var photoURL = user.photoURL;
+            var isAnonymous = user.isAnonymous;
+            var uid = user.uid;
+            var providerData = user.providerData;
+
+            if(displayName){
+                $("#usermenu-dropdown").html('<img src="'+photoURL+'" style="width:40px; height: 40px; border-radius: 50%; margin-right: 8px;"/>'+displayName+'<i class="material-icons">arrow_drop_down</i>');
+            }else{
+                $("#usermenu-dropdown").html('<img src="'+photoURL+'" style="width:40px; height: 40px; border-radius: 50%; margin-right: 8px;"/>'+email+'<i class="material-icons">arrow_drop_down</i>');
+            }
+            // ...
+            //courseid = getUrlParameter("courseid");//get the courseid
+            //courseid ? viewcoursesinfo(courseid) : alert("create a new course");
+
+          }else{
+            // User is signed out.
+            // ...
+            location.href = "index.html";
+          }
+        });
+
+        // We don't want to call this now. We want to show marketing content and
+        // wait for the user to press the login button!
+        //firebase.auth().signInWithPopup(provider);
+
+      } catch (e) {
+        console.error(e);
+      }
+    });
+
+    //https://stackoverflow.com/questions/19491336/get-url-parameter-jquery-or-how-to-get-query-string-values-in-js
+    //
+    var getUrlParameter = (sParam) =>{
+        var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+            sURLVariables = sPageURL.split('&'),
+            sParameterName,
+            i;
+
+        for (i = 0; i < sURLVariables.length; i++) {
+            sParameterName = sURLVariables[i].split('=');
+
+            if (sParameterName[0] === sParam) {
+                return sParameterName[1] === undefined ? false : sParameterName[1];//i modified the "true" into "false"
+            }
+        }
+    };
+
+    $( document ).ready(function() {
+      $('.backtotop').click(function(){
+        $("[data-toggle='tooltip']").tooltip('hide');//this makes tooltip refresh its text content
+      });
+
+      /*var theUser = {
+        uid : '123',
+        name: 'eduard peran'
+      }
+
+       new SectionManager(this.theUser, 'classid', '1234');*/
+
+    });
+    </script>
+  </body>
+</html>

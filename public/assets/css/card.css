@@ -1,0 +1,117 @@
+  .class-card{
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin-bottom: 3px;
+    /*box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);*/
+    background-color:white;
+    /*overflow: auto;*/
+    border-left: 3px solid white;
+    cursor: default;
+  }
+  .class-card:hover{
+    border-left: 3px solid gold;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+  }
+  .class-card:hover .card-action-buttons{
+    visibility: visible;
+  }
+  .card-panel{
+    width: 100%;
+    box-sizing: border-box;
+    background-color: white;
+    padding: 20px 15px 15px 15px;
+    display: none;
+  }
+  .card-panel h5, p{
+    margin: 0px;
+  }
+  .card-panel h5{
+    color: #72d8d5;
+    text-decoration: underline;
+  }
+
+  /* card action buttons css */
+  .card-action-buttons{
+    /*padding: 5px;
+    background-color: white;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+    display: block;*/
+    position: absolute;
+    top: 0px;
+    right: -30px;
+    visibility: hidden;
+    padding-left: 7px;
+  }
+  .card-view-but, .card-close-but, .card-sort-but{
+    color: gray;
+    line-height: 70%;
+    text-align: center;
+    padding: 2px;
+    transition: transform .2s;
+    display: block;
+  }
+  .card-view-but > i, .card-close-but > i, .card-sort-but > i{
+    font-size: 18px;  
+  }
+  .card-view-but:hover, .card-close-but:hover, .card-sort-but:hover{
+      color: black;
+      -ms-transform: scale(1.2); /* IE 9 */
+      -webkit-transform: scale(1.2); /* Safari 3-8 */
+      transform: scale(1.2); 
+  }
+  /* card action buttons css */
+
+  /* item and display elements div */
+  .elements-items-container{
+    /*background-color: aquamarine;*/
+    width: 100%;
+    height: 100%;
+  }
+  .eic-col-1{
+    width: 100%;
+    background-color: white;
+    display: none;
+  }
+  .eic-col-2{
+    width: 100%;
+    height: max-content;
+    /*background-color: rgb(245, 229, 229);*/
+  }
+  .elements-container{
+    width: 100%;
+    padding: 15px;
+    padding-bottom: 0px;
+    box-sizing: border-box;
+    overflow: auto;
+    border-bottom: 1px solid gainsboro;
+    background-color: white;
+    position: relative;
+  }
+  .elements-container ul{
+    padding: 0px;
+  }
+  .elements-container ul li{
+    padding: 5px;
+    list-style-type: none;
+    margin: 10px;
+    float: left;
+  }
+  .btn-up{
+    clear: both;
+    width: max-content;
+    margin: 0px auto;
+    cursor: pointer;
+  }
+  .btn-up:hover{
+    color: gainsboro;
+  }
+  .carditems-container{
+    width: 100%;
+    padding: 23px;
+    box-sizing: border-box;
+    /*background-color: antiquewhite;*/
+    display: flex;
+    flex-flow: column nowrap;
+  }
+  /* item and display elements div */
