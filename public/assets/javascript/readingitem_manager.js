@@ -127,7 +127,7 @@ class ReadingItemManager{
       
                 }else if(itemtype == 'ytlink'){
                     var ytlink = new YoutubeManager(this.theUser, carditemid, itemtype, itemid, sort_order_no);//create new Youtube Link item
-                    ytlink.setQuestion(data.val().text);
+                    ytlink.setYTLink(data.val().text);
                     this.items.push(ytlink);
         
                 }else{
@@ -166,7 +166,12 @@ class ReadingItemManager{
                           item = new QuizItemManager(this.theUser, carditemid, 'qa', itemid, data.val().sort_order_no);//create new Quiz item
                           item.setQuestion(snapitem.val().text);
                                       
-                        }else{
+                        }if(itemtype === 'ytlink'){
+                  
+                            item = new YoutubeManager(this.theUser, carditemid, itemtype , itemid, data.val().sort_order_no);//create new Quiz item
+                            item.setYTLink(snapitem.val().text);
+                                        
+                          }else{
                           item = new ItemManager(this.theUser, carditemid, itemtype, itemid, data.val().sort_order_no);//create new item           
                           item.setTextContent(snapitem.val().text);                  
                         }  

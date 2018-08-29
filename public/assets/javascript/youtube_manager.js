@@ -44,65 +44,6 @@ class YoutubeManager {
 
         // This required to make the UI look correctly by Material Design Lite
         componentHandler.upgradeElements(document.getElementById('item-id-'+this.itemid));
-
-
-        var database = firebase.database();
-        var setoptionChangeListener = (carditemid, itemid)=>{
-
-            this.item_ytRef = database.ref('item/' + this.theUser.uid + '/carditemid_' + carditemid + '/item-id-' + itemid);
-            this.item_ytRef.on('child_added', (data)=> {
-                
-                var id = data.key;
-                var message = data.val().message;
-                var textcontent = data.val().textcontent;
-                var isDeleted = data.val().isDeleted;
-
-                if(!isDeleted){
-                    var option = new Option(this.theUser, this.carditemid, this.itemid, id);
-                    option.setTextContent(textcontent);
-                    option.setMsgContent(message);
-
-                    this.options.push(option);
-
-                    this.item_qoRef.child(id).on('child_changed', (data)=> {
-                        var field = data.key;
-                        var value = data.val();
-                
-                        if(field == 'isDeleted'){
-                            $(`#quiz_option-${id}`)
-                            .fadeOut('slow', ()=>{
-                                this.item_caRef.child('quiz_option-'+id).off();
-                                $(`#quiz_option-${id}`).remove();
-                            });
-                        }else if(field == 'textcontent'){
-                            var my_mod_key = sessionStorage.getItem('quiz_option-'+id);
-                            //console.log(my_mod_key);
-                            data.ref.parent.child('last_modified_key').once('value', (snap)=>{
-                              var last_modified_key = snap.val()
-                              if(last_modified_key != my_mod_key){
-                                $(`#quiz_option-${id}`).find('.txtoption').val(value);
-                              }else{
-                                //console.log('this');
-                              }
-                            });
-                        }else if(field == 'message'){
-                            var my_mod_key = sessionStorage.getItem('quiz_option-'+id);
-                            //console.log(my_mod_key);
-                            data.ref.parent.child('last_modified_key').once('value', (snap)=>{
-                              var last_modified_key = snap.val()
-                              if(last_modified_key != my_mod_key){
-                                $(`#quiz_option-${id}`).find('.txtoption-msg').val(value);
-                              }else{
-                                //console.log('this');
-                              }
-                            });
-                        }
-                    });
-                }
-
-            });
-        }
-        setoptionChangeListener(this.carditemid, this.itemid);
     }
     setEventHandlerListener(){
 
@@ -120,6 +61,9 @@ class YoutubeManager {
                     this.deleteItem();
                 });
             }     
+        });
+        $('#item-id-'+this.itemid).find('.txtlink').on('input', (e)=>{
+            this.saveItem('ytlink', $(e.currentTarget).val());
         });
     }
     deleteItem(){
@@ -154,4 +98,21 @@ class YoutubeManager {
     setYTLink(intext){
         $('#item-id-'+this.itemid).find('.txtlink').text(intext);
      }
+     
+     saveItem(fields, value){
+
+        let modkey = (new Date()).getTime().toString(36);//creates new last modified key
+        sessionStorage.setItem('item-id-' + this.itemid, modkey);
+
+        var updates = {};
+        updates['item/' + this.theUser.uid + '/carditemid_' + this.carditemid +  '/item-id-' + this.itemid + '/last_modified_key/'] = modkey; 
+        updates['item/' + this.theUser.uid + '/carditemid_' + this.carditemid +  '/item-id-' + this.itemid + '/'+fields+'/'] = value; 
+ 
+        firebase.database().ref().update(updates)
+        .then(() => {     
+            console.log('Item saved');
+        }).catch((err)=>{
+            console.log(err);  
+        });
+    }
 }
