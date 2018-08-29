@@ -71,6 +71,12 @@ class ReadingItemManager{
                                         Question-Options
                                     </span>
                                 </li>
+                                <li class="btn-ytlink">
+                                    <span style="cursor: pointer;">
+                                        <i class="material-icons">video_library</i>
+                                        Youtube
+                                    </span>
+                                </li>
                             </ul>
                         </div>
                       </div>`;
@@ -119,6 +125,11 @@ class ReadingItemManager{
                   quizitem.setQuestion(data.val().text);
                   this.items.push(quizitem);
       
+                }else if(itemtype == 'ytlink'){
+                    var ytlink = new YoutubeManager(this.theUser, carditemid, itemtype, itemid, sort_order_no);//create new Youtube Link item
+                    ytlink.setQuestion(data.val().text);
+                    this.items.push(ytlink);
+        
                 }else{
                   var item = new ItemManager(this.theUser, carditemid, itemtype, itemid, sort_order_no);//create new item
                   item.setTextContent(data.val().text);
@@ -307,6 +318,12 @@ class ReadingItemManager{
             var isDisabled = $('#carditemid_'+this.itemid).find('div.items-container ul').sortable( "option", "disabled" );
             if(isDisabled){//we dont allow to insert new item when sortable is enabled
                 this.saveItem('qa');//create new item
+            }
+        });
+        $('#carditem-con-id-'+this.itemid).find('.btn-ytlink').click((e)=>{
+            var isDisabled = $('#carditemid_'+this.itemid).find('div.items-container ul').sortable( "option", "disabled" );
+            if(isDisabled){//we dont allow to insert new item when sortable is enabled
+                this.saveItem('ytlink');//create new item
             }
         });
 
