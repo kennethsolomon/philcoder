@@ -1,50 +1,46 @@
 <!DOCTYPE html>
-<html>
-  <body>
-    <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
-    <div id="player"></div>
+<html lang="en">
 
-    <script>
-      // 2. This code loads the IFrame Player API code asynchronously.
-      var tag = document.createElement('script');
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
 
-      tag.src = "https://www.youtube.com/iframe_api";
-      var firstScriptTag = document.getElementsByTagName('script')[0];
-      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+<body>
+  <style>
+    .alert {
+      padding: 20px;
+      background-color: #f44336;
+      color: white;
+      width: 28%;
+    }
+  </style>
 
-      // 3. This function creates an <iframe> (and YouTube player)
-      //    after the API code downloads.
-      var player;
-      function onYouTubeIframeAPIReady() {
-        player = new YT.Player('player', {
-          height: '390',
-          width: '640',
-          videoId: 'dy2cv1wDZEI',
-          events: {
-            'onReady': onPlayerReady,
-            'onStateChange': onPlayerStateChange
-          }
-        });
+  <p id="error"></p>
+  <iframe id="ytlink" width="560" height="315" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+  <script>
+    youtubePlayer();
+
+    function youtubePlayer() {
+      try {
+        var youtubeTemplate = "https://www.youtube.com/embed/";
+        var youtubeID = "https://www.youtube.com/watch?v=zgRHqcip2YY&list=PLFa0bDwXvBlCEuZMCcE2vV6oqRqXCs3is";
+        var getYoutubeID = youtubeID.substring(32, 43); // Get the 11 youtube ID, example : l4s33_L8Gzw
+        var ytlink = youtubeTemplate + getYoutubeID;
+        document.getElementById("ytlink").src = ytlink;
+      } catch (error) {
+        var error =
+          `<div class="alert">
+          <strong>Error!</strong> Please be sure to copy the exact <strong>YouTube</strong> URL.
+        </div>`;
+        document.getElementById('error').innerHTML = error;
       }
+    }
+  </script>
 
-      // 4. The API will call this function when the video player is ready.
-      function onPlayerReady(event) {
-        event.target.playVideo();
-      }
+</body>
 
-      // 5. The API calls this function when the player's state changes.
-      //    The function indicates that when playing a video (state=1),
-      //    the player should play for six seconds and then stop.
-      var done = false;
-      function onPlayerStateChange(event) {
-        if (event.data == YT.PlayerState.PLAYING && !done) {
-          setTimeout(stopVideo, 6000);
-          done = true;
-        }
-      }
-      function stopVideo() {
-        player.stopVideo();
-      }
-    </script>
-  </body>
 </html>
