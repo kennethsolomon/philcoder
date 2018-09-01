@@ -77,6 +77,12 @@ class ReadingItemManager {
                                         Youtube
                                     </span>
                                 </li>
+                                <li class="btn-course_chart">
+                                    <span style="cursor: pointer;">
+                                        <i class="material-icons">show_chart</i>
+                                        Chart
+                                    </span>
+                                </li>
                             </ul>
                         </div>
                       </div>`;
@@ -130,7 +136,13 @@ class ReadingItemManager {
                         ytlink.setYTLink(data.val().ytlink);
                         this.items.push(ytlink);
 
-                    } else {
+                    }else if (itemtype == 'course_chart') {
+                        var course_chart = new ChartItemManager(this.theUser, carditemid, itemtype, itemid, sort_order_no); //create new Youtube Link item
+                        course_chart.setCourseChart(data.val().chart); // Path to get specific data on database.. change the .chart to change the target data
+                        this.items.push(course_chart);
+
+                    }
+                     else {
                         var item = new ItemManager(this.theUser, carditemid, itemtype, itemid, sort_order_no); //create new item
                         item.setTextContent(data.val().text);
                         this.items.push(item);
@@ -168,13 +180,18 @@ class ReadingItemManager {
                                         item = new QuizItemManager(this.theUser, carditemid, 'qa', itemid, data.val().sort_order_no); //create new Quiz item
                                         item.setQuestion(snapitem.val().text);
 
-                                    }
-                                    if (itemtype === 'ytlink') {
+                                    } else if (itemtype === 'ytlink') {
 
                                         item = new YoutubeManager(this.theUser, carditemid, itemtype, itemid, data.val().sort_order_no); //create new Quiz item
                                         item.setYTLink(snapitem.val().ytlink);
 
-                                    } else {
+                                    } else if (itemtype === 'course_chart') {
+
+                                        item = new ChartItemManager(this.theUser, carditemid, itemtype, itemid, data.val().sort_order_no); //create new Quiz item
+                                        item.setCourseChart(snapitem.val().chart); // Path to get specific data on database.. change the .chart to change the target data
+
+                                    }
+                                     else {
                                         item = new ItemManager(this.theUser, carditemid, itemtype, itemid, data.val().sort_order_no); //create new item           
                                         item.setTextContent(snapitem.val().text);
                                     }
@@ -352,6 +369,12 @@ class ReadingItemManager {
             var isDisabled = $('#carditemid_' + this.itemid).find('div.items-container ul').sortable("option", "disabled");
             if (isDisabled) { //we dont allow to insert new item when sortable is enabled
                 this.saveItem('ytlink'); //create new item
+            }
+        });
+        $('#carditem-con-id-' + this.itemid).find('.btn-course_chart').click((e) => {
+            var isDisabled = $('#carditemid_' + this.itemid).find('div.items-container ul').sortable("option", "disabled");
+            if (isDisabled) { //we dont allow to insert new item when sortable is enabled
+                this.saveItem('course_chart'); //create new item
             }
         });
 

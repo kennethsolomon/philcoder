@@ -71,7 +71,7 @@ class ChartItemManager {
           <button id="btnUpdateData" type="button">Update Data</button>
         </div>
         <div class="container">
-          <canvas id="myChart" width="400" height="400"></canvas>
+          <canvas id="myChart${this.itemid}" width="400" height="400"></canvas>
         </div>
       </div>   
 				`; //Initialize element   

@@ -14,7 +14,7 @@ class YoutubeManager {
             return;
         }
         this.youTube();
-        var element = `<div id="item-id-${this.itemid}" class="item question_answer" data-type="${elementtype}">
+        var element = `<div id="item-id-${this.itemid}" class="item youtube" data-type="${elementtype}">
                         <div class="question-menu-row">
                             <div class="question-col">
                                 <div class="mdl-textfield mdl-js-textfield" style="width: 90%;">
