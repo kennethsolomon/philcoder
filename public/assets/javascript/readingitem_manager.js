@@ -138,7 +138,7 @@ class ReadingItemManager {
 
                     }else if (itemtype == 'course_chart') {
                         var course_chart = new ChartItemManager(this.theUser, carditemid, itemtype, itemid, sort_order_no); //create new Youtube Link item
-                        course_chart.setCourseChart(data.val().chart); // Path to get specific data on database.. change the .chart to change the target data
+                        course_chart.setCourseTextData(data.val().text); // Path to get specific data on database.. change the .chart to change the target data
                         this.items.push(course_chart);
 
                     }
@@ -188,7 +188,7 @@ class ReadingItemManager {
                                     } else if (itemtype === 'course_chart') {
 
                                         item = new ChartItemManager(this.theUser, carditemid, itemtype, itemid, data.val().sort_order_no); //create new Quiz item
-                                        item.setCourseChart(snapitem.val().chart); // Path to get specific data on database.. change the .chart to change the target data
+                                        item.setCourseTextData(snapitem.val().textData); // Path to get specific data on database.. change the .chart to change the target data
 
                                     }
                                      else {
@@ -628,7 +628,20 @@ class ReadingItemManager {
                     message: ''
                 }]
             };
-        } else {
+        }else if (itemtype == 'course_chart') {
+            iteminfo = {
+                carditemid: 'carditemid_' + this.itemid,
+                isDeleted: false,
+                itemtype: itemtype,
+                sort_order_no: this.items.length,
+                chartData:[{
+                    isDeleted: false,
+                    textData : '',
+                    textDataValue: ''
+                }]
+            };
+        }
+        else {
             iteminfo = {
                 carditemid: 'carditemid_' + this.itemid,
                 isDeleted: false,
