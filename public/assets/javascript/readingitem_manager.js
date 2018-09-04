@@ -189,7 +189,7 @@ class ReadingItemManager {
 
                                         item = new ChartItemManager(this.theUser, carditemid, itemtype, itemid, data.val().sort_order_no); //create new Quiz item
                                         item.setCourseTextData(snapitem.val().textData); // Path to get specific data on database.. change the .chart to change the target data
-
+                                        item.setCourseTextDataValue(snapitem.val().textDataValue);
                                     }
                                      else {
                                         item = new ItemManager(this.theUser, carditemid, itemtype, itemid, data.val().sort_order_no); //create new item           

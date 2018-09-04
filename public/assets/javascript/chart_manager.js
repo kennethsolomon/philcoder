@@ -43,13 +43,11 @@ class ChartItemManager {
                         <th></th>
                         <th></th>
                       </tr>
-                      <tbody id="textBoxContainer${this.itemid}" class="ui-sortable" style="cursor:pointer">
-                        <tr> 
-                          <td><input id="textData${this.itemid}" name = "Text"  type="text" placeholder="textfield"  class="form-control" /></td>
-                          <td><input id="textDataValue${this.itemid}" name = "Value" class="form-control" type="text"  placeholder="value"  /></td>
-                          <td><button id="textDataDelete${this.itemid}" type="button" class="btn btn-outline-secondary remove"><i class="material-icons">delete</i></button></td>
-                        </tr>          
-                      </tbody>
+                      
+                        <tbody id="textBoxContainer${this.itemid}" class="ui-sortable chartData-row" style="cursor:pointer">
+
+                        </tbody>
+                
                       <tfoot>
                         <tr>
                           <th colspan="5">
@@ -178,4 +176,126 @@ class ChartItemManager {
     };
     setoptionChangeListener(this.carditemid, this.itemid);
     }
+
+    setEventHandlerListener() {
+        $("#item-id-" + this.itemid).parents("li").hover(
+            function() {
+                $(this)
+                .find(".item-close-but")
+                .css({ display: "block" });
+            },
+            function() {
+              $(this)
+                .find(".item-close-but")
+                .css({ display: "none" });
+            }
+          );
+    
+        $("#item-id-" + this.itemid).parents("li").find(".item-close-but").click(e => {
+            var c = e.currentTarget;
+            if (confirm("Delete this item?")) {
+              $(c).parent().fadeOut("slow", e => {
+                  $(c).parent().remove();
+                  this.deleteItem();
+                });
+            }
+          });
+         
+        $("#item-id-" + this.itemid).find(`#btnAdd${this.itemid}`).click(() => {
+            this.saveItemValue("chartData");
+            });
+
+        $(`#textData${this.itemid}`).on("input", e => {
+            this.saveItem("textData", $(e.currentTarget).val());
+            });
+        $(`#textData${this.itemid}`).on("input", e => {
+            this.saveItem("textDataValue", $(e.currentTarget).val());
+            });
+    
+        this.autoresizeTextarea();
+        //this.setupUploadImageDialog();
+      }
+
+    saveItem(fields, value) {
+        let modkey = new Date().getTime().toString(36); //creates new last modified key
+        sessionStorage.setItem("item-id-" + this.itemid, modkey);
+    
+        var updates = {};
+        updates["item/" + this.theUser.uid + "/carditemid_" + this.carditemid + "/item-id-" + this.itemid + "/last_modified_key/"] = modkey;
+        updates["item/" + this.theUser.uid + "/carditemid_" + this.carditemid + "/item-id-" + this.itemid + "/" + fields + "/" ] = value;
+    
+        firebase.database().ref().update(updates).then(() => {
+            console.log("Item saved");
+          }).catch(err => {
+            console.log(err);
+          });
+      }
+    
+      saveItemValue(fieldType) {
+        let Ref ="item/" + this.theUser.uid + "/carditemid_" + this.carditemid + "/item-id-" + this.itemid + "/" + fieldType + "/";
+        firebase.database().ref(Ref).once("value", snap => {
+            firebase.database().ref(Ref + (snap.val() ? snap.val().length : 0)).set({ isDeleted: false }).then(() => {}).catch(err => {
+                console.log(err);
+              });
+          });
+      }
+
+      deleteItem() {
+        firebase.database().ref("item/" + this.theUser.uid + "/carditemid_" + this.carditemid + "/item-id-" + this.itemid).update({ isDeleted: true })
+          .then(() => {
+            this.showUndoSnackBar();
+            this.detachListeners();
+            console.log("Item Deleted");
+          })
+          .catch(err => {
+            console.log(err);
+          });
+      }
+
+      showUndoSnackBar() {
+        var snackbarContainer = document.querySelector(".mdl-snackbar");
+    
+        var handler = event => {
+          firebase.database().ref("item/" + this.theUser.uid + "/carditemid_" + this.carditemid + "/item-id-" + this.itemid)
+            .update({ isDeleted: false })
+            .then(() => {})
+            .catch(err => {
+              console.log(err);
+            });
+        };
+        var data = {
+            message: "Quiz item deleted",
+            timeout: 3000,
+            actionHandler: handler,
+            actionText: "Undo"
+          };
+          snackbarContainer.MaterialSnackbar.showSnackbar(data);
+        }
+
+        detachListeners() {
+            for (let chart of this.charts) {
+              this.item_caRef.child("chart_data-" + chart.id).off();
+            }
+          }
+
+      autoresizeTextarea() {
+        //creadits to the author: https://stephanwagner.me/auto-resizing-textarea
+        $.each($("textarea[data-autoresize]"), function() {
+          var offset = this.offsetHeight - this.clientHeight;
+    
+          var resizeTextarea = function(el) {
+            $(el).css("height", "auto").css("height", el.scrollHeight + offset);
+          };
+          $(this).on("keyup input", function() {
+              resizeTextarea(this);
+            }).removeAttr("data-autoresize");
+        });
+      }
+
+      setCourseTextData(text) {
+        $(`#textData${this.itemid}`).text(text);
+      }
+      setCourseTextDataValue(text) {
+        $(`#textDataValue${this.itemid}`).text(text);
+      }
 }
