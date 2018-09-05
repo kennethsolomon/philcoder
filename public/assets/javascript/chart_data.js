@@ -11,7 +11,7 @@ class ChartData {
         }
         var chartField = `<tr id = "chart_data-${id}"> 
         <td><input id="textData${this.itemid}" name = "Text"  type="text" placeholder="textfield"  class="form-control" /></td>
-        <td><input id="textDataValue${this.itemid}" name = "Value" class="form-control" type="text"  placeholder="value"  /></td>
+        <td><input id="textDataValue${this.itemid}" name = "Value" class="form-control" type="number"  placeholder="value"  /></td>
         <td><button id="textDataDelete${this.itemid}" type="button" class="btn btn-outline-secondary remove"><i class="material-icons">delete</i></button></td>
         </tr>`;
 
@@ -20,10 +20,14 @@ class ChartData {
         $(chartField).appendTo($('#item-id-' + this.itemid).find(`#textBoxContainer${this.itemid}`)).hide().show('fadein'); //apply fadein effects 
 
         this.setOptionClosedClickEventListener(); 
-
-
+      
+        var chartLabels = new ChartItemManager (this.theUser, this.carditemid, this.elementtype, id = null, this.orderno);
+        // console.log(chartLabels.setupChart.chartListOfData.datasets[0].data[2]);
+        chartLabels.setupChart("asdasd");
+       
         $(`#chart_data-${id}`).find(`#textData${this.itemid}`).on('input', (e) => {
             this.saveinfo('textData', e.currentTarget.value);
+            
         });
         $(`#chart_data-${id}`).find(`#textDataValue${this.itemid}`).on('input', (e) => {
             this.saveinfo('textDataValue', e.currentTarget.value);

@@ -109,8 +109,8 @@ class ChartItemManager {
       $("#item-id-" + this.itemid).focus();     
 
       this.setEventHandlerListener();
-      this.setupChart();
-  
+      //this.setupChart();
+      this.setupChartData();
       // This required to make the UI look correctly by Material Design Lite
       componentHandler.upgradeElements(document.getElementById("item-id-" + this.itemid));
       
@@ -181,10 +181,12 @@ class ChartItemManager {
     }
 
     //CHART
-    setupChart(){
+    setupChart(dataLabel){
       $(`#textBoxContainer${this.itemid}`).sortable();
+      var dataLabel;
+     var dataLabels = [];
       var chartListOfData = this.chartListOfData = {
-        labels: [],
+        labels: dataLabels,
         datasets: [
           {
             label: "",
@@ -209,38 +211,44 @@ class ChartItemManager {
           }
         ]
       };
-     
-    Chart.defaults.global.defaultFontFamily = "monospace";
-    this.chart = document
-      .getElementById("myChart" + this.itemid)
-      .getContext("2d");
-    this.myChart = new Chart(this.chart, {
-      type: "line", // bar, horizontalBar, pie, line, doughnut, radar, polarArea, Bubble
-      data: this.chartListOfData,
-      options: {
-        legend: {
-          display: false
-        },
-        scales: {
-          yAxes: [
-            {
-              ticks: {
-                beginAtZero: true
-              }
-            }
-          ]
-        }
-      }
-    });
+      
+    dataLabels.push(dataLabel);
+    
+    console.log(chartListOfData.labels);
 
-    console.log("setupChart" + chartListOfData.datasets[0].data[2]);
+    //console.log("setupChart" + chartListOfData.datasets[0].data[2]);
 
  
     // var test = this.labelValue = chartListOfData.labels.push(this.charts);
     // console.log(test);
+   
+
     
     }
-
+    setupChartData() {
+    // console.log(this.setupChart.chartListOfData);
+    // Chart.defaults.global.defaultFontFamily = "monospace";
+    // this.chart = document.getElementById("myChart" + this.itemid).getContext("2d");
+    // this.myChart = new Chart(this.chart, {
+    //   type: "line", // bar, horizontalBar, pie, line, doughnut, radar, polarArea, Bubble
+    //   data: setupChart.chartListOfData,
+    //   options: {
+    //     legend: {
+    //       display: false
+    //     },
+    //     scales: {
+    //       yAxes: [
+    //         {
+    //           ticks: {
+    //             beginAtZero: true
+    //           }
+    //         }
+    //       ]
+    //     }
+    //   }
+    // });
+    
+    }
     setEventHandlerListener() {
         $("#item-id-" + this.itemid).parents("li").hover(
             function() {
