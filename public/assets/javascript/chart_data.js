@@ -1,6 +1,6 @@
 "use strict";
 class ChartData {
-    constructor(theUser, carditemid, quizitemid, id) {
+    constructor(theUser, carditemid, chartitemid, id) {
         this.theUser = theUser;
         this.carditemid = carditemid;
         this.itemid = chartitemid;
