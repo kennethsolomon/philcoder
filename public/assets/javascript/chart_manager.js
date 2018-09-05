@@ -109,6 +109,7 @@ class ChartItemManager {
       $("#item-id-" + this.itemid).focus();     
 
       this.setEventHandlerListener();
+      this.setupChart();
   
       // This required to make the UI look correctly by Material Design Lite
       componentHandler.upgradeElements(document.getElementById("item-id-" + this.itemid));
@@ -129,8 +130,8 @@ class ChartItemManager {
             this.itemid,
             id
           );
-          chart.setTextData(textData);
-          chart.setTextDataValue(textDataValue);
+          chart.setCourseTextData(textData);
+          chart.setCourseTextDataValue(textDataValue);
 
           this.charts.push(chart);
 
@@ -163,18 +164,81 @@ class ChartItemManager {
                 var last_modified_key = snap.val();
                 if (last_modified_key != my_mod_key) {
                   $(`#chart_data-${id}`)
-                    .find(`#textData${this.itemid}`)
+                    .find(`#textDataValue${this.itemid}`)
                     .val(value);
+
                 } else {
                   //console.log('this');
                 }
               });
             }
+            
           });
         }
       });
     };
     setoptionChangeListener(this.carditemid, this.itemid);
+    }
+
+    //CHART
+    setupChart(){
+      $(`#textBoxContainer${this.itemid}`).sortable();
+      var chartListOfData = this.chartListOfData = {
+        labels: [],
+        datasets: [
+          {
+            label: "",
+            data: [12, 19, 3, 5, 2, 3],
+            backgroundColor: [
+              "rgba(255, 99, 132, 0.2)",
+              "rgba(54, 162, 235, 0.2)",
+              "rgba(255, 206, 86, 0.2)",
+              "rgba(75, 192, 192, 0.2)",
+              "rgba(153, 102, 255, 0.2)",
+              "rgba(255, 159, 64, 0.2)"
+            ],
+            borderColor: [
+              "rgba(255,99,132,1)",
+              "rgba(54, 162, 235, 1)",
+              "rgba(255, 206, 86, 1)",
+              "rgba(75, 192, 192, 1)",
+              "rgba(153, 102, 255, 1)",
+              "rgba(255, 159, 64, 1)"
+            ],
+            borderWidth: 1
+          }
+        ]
+      };
+     
+    Chart.defaults.global.defaultFontFamily = "monospace";
+    this.chart = document
+      .getElementById("myChart" + this.itemid)
+      .getContext("2d");
+    this.myChart = new Chart(this.chart, {
+      type: "line", // bar, horizontalBar, pie, line, doughnut, radar, polarArea, Bubble
+      data: this.chartListOfData,
+      options: {
+        legend: {
+          display: false
+        },
+        scales: {
+          yAxes: [
+            {
+              ticks: {
+                beginAtZero: true
+              }
+            }
+          ]
+        }
+      }
+    });
+
+    console.log("setupChart" + chartListOfData.datasets[0].data[2]);
+
+ 
+    // var test = this.labelValue = chartListOfData.labels.push(this.charts);
+    // console.log(test);
+    
     }
 
     setEventHandlerListener() {

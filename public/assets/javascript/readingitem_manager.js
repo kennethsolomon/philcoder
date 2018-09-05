@@ -140,7 +140,7 @@ class ReadingItemManager {
                         var course_chart = new ChartItemManager(this.theUser, carditemid, itemtype, itemid, sort_order_no); //create new Youtube Link item
                         course_chart.setCourseTextData(data.val().text); // Path to get specific data on database.. change the .chart to change the target data
                         this.items.push(course_chart);
-
+                        
                     }
                      else {
                         var item = new ItemManager(this.theUser, carditemid, itemtype, itemid, sort_order_no); //create new item

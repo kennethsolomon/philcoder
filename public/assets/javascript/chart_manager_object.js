@@ -207,7 +207,6 @@ class ChartItemManager {
     // $('#chartType').change(() => {
     //     this.updateChartType();
     // });
-
     this.myData = {
       // labels: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
       // datasets: [{

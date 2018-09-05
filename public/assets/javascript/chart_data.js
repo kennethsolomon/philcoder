@@ -9,7 +9,6 @@ class ChartData {
         if (!id) {
             return;
         }
-
         var chartField = `<tr id = "chart_data-${id}"> 
         <td><input id="textData${this.itemid}" name = "Text"  type="text" placeholder="textfield"  class="form-control" /></td>
         <td><input id="textDataValue${this.itemid}" name = "Value" class="form-control" type="text"  placeholder="value"  /></td>
@@ -17,16 +16,24 @@ class ChartData {
         </tr>`;
 
       //  $(chartField).appendTo($('#item-id-' + this.itemid).find('.answer-row')).hide().show('fadein'); //apply fadein effects 
-        $(chartField).appendTo($(`textBoxContainer${this.itemid}`)).hide().show('fadein'); //apply fadein effects
+      //  $(chartField).appendTo($(`textBoxContainer${this.itemid}`)).hide().show('fadein'); //apply fadein effects
+        $(chartField).appendTo($('#item-id-' + this.itemid).find(`#textBoxContainer${this.itemid}`)).hide().show('fadein'); //apply fadein effects 
 
         this.setOptionClosedClickEventListener(); 
 
-        $(`#textData${this.itemid}`).on('input', (e) => {
+
+        $(`#chart_data-${id}`).find(`#textData${this.itemid}`).on('input', (e) => {
             this.saveinfo('textData', e.currentTarget.value);
         });
-        $(`#textDataValue${this.itemid}`).on('input', (e) => {
+        $(`#chart_data-${id}`).find(`#textDataValue${this.itemid}`).on('input', (e) => {
             this.saveinfo('textDataValue', e.currentTarget.value);
         });
+        // $(`#textData${this.itemid}`).on('input', (e) => {
+        //     this.saveinfo('textData', e.currentTarget.value);
+        // });
+        // $(`#textDataValue${this.itemid}`).on('input', (e) => {
+        //     this.saveinfo('textDataValue', e.currentTarget.value);
+        // });
         // This required to make the UI look correctly by Material Design Lite
         componentHandler.upgradeElements(document.getElementById('item-id-' + this.itemid));
 
